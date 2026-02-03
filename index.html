@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For Garima ❤️</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Animations -->
+  <style>
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+    .float {
+      animation: float 3s ease-in-out infinite;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-pink-200 via-rose-300 to-red-400 text-white flex items-center justify-center">
+
+  <!-- Background Music -->
+  <audio id="bgMusic" loop autoplay muted playsinline>
+  <source src="veer_suruli.mp3" type="audio/mpeg">
+</audio>
+
+
+  <!-- Music Button -->
+  <button onclick="playMusic()"
+    class=" hidden fixed top-4 right-4 bg-white text-pink-600 px-4 py-2 rounded-full shadow-lg hover:scale-105 transition">
+    🎵 Play Music
+  </button>
+
+  <!-- Main Card -->
+  <div class="bg-white/20 backdrop-blur-lg rounded-2xl shadow-2xl p-8 max-w-xl w-full mx-4 text-center">
+
+    <!-- Navigation -->
+    <nav class="flex justify-center gap-6 mb-6 font-semibold">
+      <a href="index.html" class="underline">Home</a>
+      <a href="memories.html" class="hover:underline">Memories</a>
+      <a href="gallery.html" class="hover:underline">Gallery</a>
+      <a href="promise.html" class="hover:underline">Promise</a>
+    </nav>
+
+    <!-- Title -->
+    <h1 class="text-4xl md:text-5xl font-bold mb-4 float">
+      Garima Singh ❤️
+    </h1>
+
+    <!-- Intro -->
+    <p class="text-lg md:text-xl mb-6">
+      This is not just a website.  
+      It’s something I kept in my heart since school.
+    </p>
+
+    <!-- Story -->
+    <div class="text-base md:text-lg space-y-4 text-white/90">
+      <p>
+        From the very first day of school,
+        when everything felt new and unfamiliar,
+        you stood out.
+      </p>
+
+      <p>
+        You were wearing an
+        <span class="font-semibold">orange top</span>
+        and
+        <span class="font-semibold">white</span>.
+      </p>
+
+      <p>
+        I never told you then.  
+        But I remember it even today.
+      </p>
+    </div>
+
+    <!-- Proposal -->
+    <div class="mt-8 border-t border-white/30 pt-6">
+      <p class="text-xl md:text-2xl mb-4">
+        Garima,
+      </p>
+
+      <p class="text-lg md:text-xl mb-6">
+        I’ve liked you since the first day of school,  
+        and my feelings never changed.
+      </p>
+
+      <p class="text-2xl font-bold text-yellow-200">
+        Will you be mine? 💛
+      </p>
+    </div>
+
+    <!-- Hearts -->
+    <div class="flex justify-center mt-6 space-x-3 text-2xl">
+      <span class="float">❤️</span>
+      <span class="float">💖</span>
+      <span class="float">💕</span>
+    </div>
+
+  </div>
+
+  <!-- Script -->
+<script>
+  const music = document.getElementById("bgMusic");
+
+  window.addEventListener("load", () => {
+    // Try to unmute and play after load
+    music.muted = false;
+    const attempt = music.play();
+
+    if (attempt !== undefined) {
+      attempt.catch(() => {
+        // If blocked, play on first interaction anywhere
+        document.body.addEventListener("click", startMusic, { once: true });
+        document.body.addEventListener("touchstart", startMusic, { once: true });
+      });
+    }
+  });
+
+  function startMusic() {
+    music.muted = false;
+    music.play();
+  }
+</script>
+
+
+</body>
+</html>
